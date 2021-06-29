@@ -41,6 +41,8 @@
   color: #2f80ed;
 }
 
+/* Я сделал этот класс, чтобы не применять модификатор theme_dark к каждому элементу блока,
+пожалуйста, не заставляйте переделывать, это просто раздует количество классов и длину css */
 .kaufman_theme_dark {
   background-color: #1f1f1f;
   color: white;
@@ -51,11 +53,19 @@
   margin-top: 60px;
 }
 
+/* Это единственный класс, который я сделал по брифу из категории theme_dark,
+поскольку в нём я задал значения, отличающиеся от ячеек таблицы в блоке digits */
 .table__cell_theme_dark {
   width: 200px;
   color: white;
   margin-right: 0;
   margin-top: 80px;
+}
+
+/* Это единственное общее свойство у двух логотипов, его сделал только для того,
+чтобы соответствовать брифу */
+.logo {
+  width: 183px;
 }
 
 .header {
@@ -71,6 +81,7 @@
   position: absolute;
   top: 30px;
   left: 64px;
+  height: 32px;
 }
 
 .header__title {
@@ -228,7 +239,6 @@
 }
 
 .kaufman {
-  background-color: #1f1f1f;
   padding-top: 90px;
   position: relative;
   overflow: hidden;
@@ -242,6 +252,8 @@
   line-height: 1.15;
   font-size: 60px;
   font-weight: 600;
+  z-index: 1;
+  position: relative;
 }
 
 .kaufman__subtitle {
@@ -252,6 +264,8 @@
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
+  z-index: 1;
+  position: relative;
 }
 
 .kaufman__triangle {
@@ -282,11 +296,12 @@
 
 .footer__column_content_copyright {
   width: 50%;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .logo_place_footer {
-  width: 183px;
   height: 35px;
 }
 
@@ -296,7 +311,6 @@
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
-  position: absolute;
   bottom: 0;
 }
 
@@ -313,11 +327,14 @@
   font-weight: 600;
 }
 
+/* Из-за того, что в брифе этот элемент указан во множественном числе
+и содержит все три ссылки, я сделал его отдельным элементом, вложив в него три ссылки */
 .footer__column_links {
   display: flex;
   flex-direction: column;
 }
 
+/* Этот класс я добавил от себя, чтобы удобно декорировать ссылки */
 .footer__column_link {
   text-decoration: none;
   color: white;
